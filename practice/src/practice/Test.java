@@ -40,18 +40,35 @@ public class Test {
 			switch (number) {
 			case 0: 
 				map = new HashMap<String, String>();
-
-				// 삽입
 				System.out.print("이름 입력 >>> ");
 				name = input.next();
-				System.out.print("주소 입력 >>> ");
-				address = input.next();
-				System.out.print("전화 입력 >>> ");
-				phonenumber = input.next();
-				// 주소와 핸드폰 번호를 합쳐서 저장함
-				temp = address + " " + phonenumber;
-				map.put(name, temp);
-				addArraylist.add(map);
+				
+				for(int i=0; i<addArraylist.size(); i++) {
+					if(addArraylist.get(i).containsKey(name)){
+						System.out.print("주소 입력 >>> ");
+						address = input.next();
+						System.out.print("전화 입력 >>> ");
+						phonenumber = input.next();
+						// 주소와 핸드폰 번호를 합쳐서 저장함
+						temp = address + " " + phonenumber;
+						map.put(name, temp);
+						addArraylist.add(map);
+					}else{
+						System.out.println("존재하는 이름입니다.");
+					}
+				}
+				
+//				// 삽입
+//				System.out.print("이름 입력 >>> ");
+//				name = input.next();
+//				System.out.print("주소 입력 >>> ");
+//				address = input.next();
+//				System.out.print("전화 입력 >>> ");
+//				phonenumber = input.next();
+//				// 주소와 핸드폰 번호를 합쳐서 저장함
+//				temp = address + " " + phonenumber;
+//				map.put(name, temp);
+//				addArraylist.add(map);
 				break;
 
 			case 1:
